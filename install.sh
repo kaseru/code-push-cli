@@ -33,12 +33,14 @@ trap cleanup EXIT HUP INT TERM
 curl --fail --location --silent --show-error "$ARCHIVE_URL" |
     tar -xz --strip-components=1 -C "$TEMP_DIR"
 
-[ -f "$TEMP_DIR/bin/cli.js" ] || {
-    echo "Error: downloaded package has no CLI entry point." >&2
+[ -f "$TEMP_DIR/src/cli.ts" ] || {
+    echo "Error: downloaded source has no CLI entry point." >&2
     exit 1
 }
 
-npm install --omit=dev --ignore-scripts --prefix "$TEMP_DIR"
+npm install --include=dev --ignore-scripts --prefix "$TEMP_DIR"
+npm run build --prefix "$TEMP_DIR"
+npm prune --omit=dev --ignore-scripts --prefix "$TEMP_DIR"
 
 rm -rf "$INSTALL_DIR"
 mkdir -p "$(dirname "$INSTALL_DIR")" "$BIN_DIR"

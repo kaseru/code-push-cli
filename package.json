@@ -2,19 +2,11 @@
   "name": "@shm-open/code-push-cli",
   "version": "2.6.5",
   "description": "Management CLI for the CodePush service",
-  "main": "bin/cli.js",
   "scripts": {
     "start": "tsc --watch",
     "build": "rm -rf bin && tsc",
-    "release": "npm test && npm run build && standard-version && git push --follow-tags origin master && npm publish",
     "test": "echo 'no tests'"
   },
-  "bin": {
-    "code-push": "bin/cli.js"
-  },
-  "files": [
-    "bin/"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/shm-open/code-push-cli"
