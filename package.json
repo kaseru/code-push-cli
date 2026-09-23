@@ -6,6 +6,7 @@
   "scripts": {
     "start": "tsc --watch",
     "build": "rm -rf bin && tsc",
+    "prepare": "npm run build",
     "release": "npm test && npm run build && standard-version && git push --follow-tags origin master && npm publish",
     "test": "echo 'no tests'"
   },
