@@ -50,6 +50,12 @@ curl -fsSL https://raw.githubusercontent.com/kaseru/code-push-cli/master/install
 
 This installs `code-push` in `~/.local/bin`, which must be in your `PATH`.
 
+Uninstall:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/kaseru/code-push-cli/master/uninstall.sh | sh
+```
+
 * Or install upstream package from npm: `npm install -g @shm-open/code-push-cli`
 
 ## Getting Started
