@@ -42,7 +42,15 @@ This fork is for open source [code-push-server](https://github.com/shm-open/code
 ## Installation
 
 * Install [Node.js](https://nodejs.org/)
-* Install the CodePush CLI: `npm install -g @shm-open/code-push-cli`
+* Install from GitHub without an npm account:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/kaseru/code-push-cli/master/install.sh | sh
+```
+
+This installs `code-push` in `~/.local/bin`, which must be in your `PATH`.
+
+* Or install upstream package from npm: `npm install -g @shm-open/code-push-cli`
 
 ## Getting Started
 
