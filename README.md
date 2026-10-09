@@ -48,7 +48,7 @@ This fork is for open source [code-push-server](https://github.com/shm-open/code
 curl -fsSL https://raw.githubusercontent.com/kaseru/code-push-cli/master/install.sh | sh
 ```
 
-This installs `code-push` in `~/.local/bin`, which must be in your `PATH`.
+This installs `code-push` in `~/.local/bin` and adds it to your `PATH` via your shell profile (set `CODE_PUSH_CLI_NO_MODIFY_PATH=1` to skip). Open a new terminal afterwards.
 
 Uninstall:
 
