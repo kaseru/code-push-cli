@@ -496,6 +496,12 @@ Achieving the equivalent behavior with the `release-react` command would simply 
 code-push release-react MyApp-iOS ios
 ```
 
+When the app uses Hermes, `release-react` compiles the bundle with the `hermesc` binary shipped in `node_modules` for the current OS. Prebuilt binaries only exist for macOS, Linux x86-64 and Windows, so on other platforms (e.g. Linux arm64) build `hermesc` from the [Hermes](https://github.com/facebook/hermes) tag matching your app's `hermes-compiler` version and point the CLI to it:
+
+```shell
+CODE_PUSH_HERMESC_PATH=/path/to/hermesc code-push release-react MyApp-Android android
+```
+
 *NOTE: We believe that the `release-react` command should be valuable for most React Native developers, so if you're finding that it isn't flexible enough or missing a key feature, please don't hesistate to [let us know](mailto:codepushfeed@microsoft.com), so that we can improve it!*
 
 #### App name parameter

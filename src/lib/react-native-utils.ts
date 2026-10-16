@@ -581,6 +581,14 @@ function getHermesCommand(): string {
             return false;
         }
     };
+    // explicit override, e.g. a self-built hermesc for platforms without a prebuilt binary (linux-arm64)
+    const customHermesc = process.env.CODE_PUSH_HERMESC_PATH;
+    if (customHermesc) {
+        if (!fileExists(customHermesc)) {
+            throw new Error(`CODE_PUSH_HERMESC_PATH points to a missing file: ${customHermesc}`);
+        }
+        return customHermesc;
+    }
     // assume if hermes-engine exists it should be used instead of hermesvm
     const hermesEngineNew = path.join(
         'node_modules',
